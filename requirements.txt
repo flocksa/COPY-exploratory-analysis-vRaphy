@@ -1,0 +1,5 @@
+Flask
+pandas
+pyreadstat
+requests
+flask-cors
