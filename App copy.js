@@ -1,5 +1,5 @@
 import React from 'react';
-import NHANESUI from './FrontEndUI.jsx';
+import NHANESUI from './NHANESUI';
 
 function App() {
     return <NHANESUI />;

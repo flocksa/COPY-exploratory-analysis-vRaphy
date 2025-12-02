@@ -33,7 +33,8 @@ def profile():
     selections = data.get("selections")
     cycles = data.get("cycles") 
       
-    if not selections or not cycles:          return jsonify({'error': 'Please provide both "selections" and "cycles"$
+    if not selections or not cycles:
+           return jsonify({'error': 'Please provide both "selections" and "cycles"$
     
     try:
         profile_df = profile_builder.build_profile(selections, cycles)
