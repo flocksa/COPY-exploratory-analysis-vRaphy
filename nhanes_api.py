@@ -1,11 +1,16 @@
 from flask import Flask, request, jsonify, send_file
 import os
 from patient_profile_builder import PatientProfileBuilder, download_nhanes_file
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 #Instantiate the PatientProfileBuilder with the callable download function.
 profile_builder = PatientProfileBuilder(download_nhanes_file)
+
+# Store the last merged file path globally (for visualization access)
+MERGED_CSV_PATH = os.path.abspath("patient_profile_temp.csv")
 
 @app.route('/', methods=['GET'])
 def index():
@@ -40,5 +45,9 @@ def profile():
         print("Error in /profile endpoint:", str(e))
         return jsonify({'error': str(e)}), 500
 
+### TO DO:
+# ADD @app.route('/visualization', methods IDK LOOK UPDATEDAPI.PY)
+
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5050, debug=True)
