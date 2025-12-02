@@ -1,4 +1,5 @@
 #!/bin/bash
+# installs and runs python env and dependencies
 
 python -m venv .venv
 source .venv/bin/activate
