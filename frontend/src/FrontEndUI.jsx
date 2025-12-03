@@ -48,14 +48,14 @@ function NHANESUI() {
       cycles: nhanesCycles,
     };
     
-    // if using github codespace, replace (const) host with the codespace name retrieved using get_codespace_name.sh!!
-    // if you're running these locally, replace response with:
+    // if using github codespace, replace PASTE_CODESPACE_NAME_HERE with the codespace name retrieved using get_codespace_name.sh!!
+    // if you're running these locally, replace cs_backend in fetch() with:
     // 'http://localhost:5050/profile'
-    const COPY_CODESPACE_NAME_HERE = `jubilant-yodel-57qgpwp5jj62q4v`;
-    const cs_backend = `https://${COPY_CODESPACE_NAME_HERE}-5050.app.github.dev/profile`
+    const CODESPACE_NAME_HERE = `please_paste_codespace_name_here`;
+    const cs_backend = `https://${CODESPACE_NAME_HERE}-5050.app.github.dev/profile`
 
     try {
-      const response = await fetch(cs_backend, { //replace the string inside fetch() here with (const) cs_backend if using github codespace
+      const response = await fetch(cs_backend, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
