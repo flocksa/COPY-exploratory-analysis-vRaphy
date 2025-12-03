@@ -51,8 +51,8 @@ function NHANESUI() {
     // if using github codespace, replace (const) host with the codespace name retrieved using get_codespace_name.sh!!
     // if you're running these locally, replace response with:
     // 'http://localhost:5050/profile'
-    const n = `turbo-parakeet-r95rwwg545cpvvv`;
-    const cs_backend = `https://${n}-5050.app.github.dev/profile`
+    const COPY_CODESPACE_NAME_HERE = `jubilant-yodel-57qgpwp5jj62q4v`;
+    const cs_backend = `https://${COPY_CODESPACE_NAME_HERE}-5050.app.github.dev/profile`
 
     try {
       const response = await fetch(cs_backend, { //replace the string inside fetch() here with (const) cs_backend if using github codespace
